@@ -1,6 +1,4 @@
-
-
-from src2.dataCleaning import (
+from src.dataCleaning import (
     load_data,
     filter_countries,
     filter_years,
@@ -8,8 +6,9 @@ from src2.dataCleaning import (
     convert_numbers
 )
 
-from src2.analysis import (
-    visual_normality_test
+from src.analysis import (
+    visual_normality_test,
+    statistical_normality_test
 )
 
 list_countries = ["United Kingdom", "France", "Germany"]
@@ -32,5 +31,3 @@ energy = clean_missing_values(energy)
 co2 = convert_numbers(co2)
 
 # Analaysis
-visual_normality_test(co2, "gdp", list_countries, start_year, end_year)
-visual_normality_test(co2, "total_ghg", list_countries, start_year, end_year)
